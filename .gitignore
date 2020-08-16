@@ -1,0 +1,17 @@
+# npm
+node_modules/
+.npm
+*.tgz
+
+# code coverage
+coverage/
+
+# jsii
+tsconfig.json
+.jsii
+dist/
+*.js
+*.d.ts
+.cdk.staging
+
+lib/resources/

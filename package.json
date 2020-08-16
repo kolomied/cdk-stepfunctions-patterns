@@ -1,0 +1,130 @@
+{
+  "name": "cdk-stepfunctions-patterns",
+  "version": "0.1.0",
+  "description": "A set of Step Functions high-level patterns.",
+  "scripts": {
+    "build": "jsii",
+    "build:watch": "jsii -w",
+    "package": "jsii-pacmak",
+    "cdk": "cdk",
+    "check": "npm test && npm run lint",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run check",
+    "preversion": "npm run lint",
+    "test": "jest --passWithNoTests",
+    "version": "npm run format && git add -A src"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jsii": {
+    "outdir": "dist",
+    "versionFormat": "short",
+    "excludeTypescript": [
+      "tests"
+    ],
+    "targets": {
+      "python": {
+        "distName": "cdk-stepfunctions-patterns",
+        "module": "Talnakh.StepFunctions.Patterns"
+      },
+      "dotnet": {
+        "namespace": "Talnakh.StepFunctions.Patterns",
+        "packageId": "Talnakh.StepFunctions.Patterns"
+      },
+      "java": {
+        "package": "xyz.talnakh.stepfunctions.patterns",
+        "maven": {
+          "groupId": "xyz.talnakh",
+          "artifactId": "SqlServerSeeder.Patterns"
+        }
+      }
+    }
+  },
+  "stability": "experimental",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kolomied/cdk-stepfunctions-patterns.git"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "stepfunctions",
+    "pattern",
+    "resiliency"
+  ],
+  "author": {
+    "name": "Dmitry Kolomiets",
+    "email": "kolomied@amazon.co.uk",
+    "url": "https://github.com/kolomied"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kolomied/cdk-stepfunctions-patterns/issues"
+  },
+  "homepage": "https://github.com/kolomied/cdk-stepfunctions-patterns#readme",
+  "dependencies": {
+    "@aws-cdk/aws-lambda": "^1.49.1",
+    "@aws-cdk/core": "^1.49.1",
+    "@aws-cdk/aws-stepfunctions": "^1.49.1",
+    "@aws-cdk/aws-stepfunctions-tasks": "^1.49.1",
+    "aws-sdk": "^2.709.0",
+    "constructs": "^3.0.4"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "^1.49.1",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "aws-cdk": "^1.49.1",
+    "eslint": "^7.4.0",
+    "jest": "^26.1.0",
+    "jsii": "^1.8.0",
+    "jsii-pacmak": "^1.8.0",
+    "jsii-release": "^0.1.9",
+    "minimist": ">=1.2.5",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.6"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/*.ts",
+      "!node_modules/**"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true
+        }
+      },
+      "testEnvironment": "node"
+    }
+  },
+  "peerDependencies": {
+    "@aws-cdk/aws-lambda": "^1.49.1",
+    "@aws-cdk/core": "^1.49.1",
+    "constructs": "^3.0.4",
+    "@aws-cdk/aws-stepfunctions": "^1.49.1",
+    "@aws-cdk/aws-stepfunctions-tasks": "^1.49.1"
+  },
+  "bundledDependencies": [
+    "aws-sdk"
+  ]
+}
