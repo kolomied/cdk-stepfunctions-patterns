@@ -52,7 +52,7 @@ export class RetryWithJitterTask extends sfn.Parallel {
 
     const calculateJitterLambda = new lambda.Function(this, 'CalculateJitterLambda', {
       runtime: lambda.Runtime.PYTHON_3_8,
-      code: lambda.Code.fromAsset(__dirname + '/lambda/jitter'),
+      code: lambda.Code.fromAsset(__dirname + '/../../lambda/jitter'),
       handler: "main.lambda_handler",
     });
 

@@ -1,6 +1,6 @@
 {
   "name": "cdk-stepfunctions-patterns",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A set of Step Functions high-level patterns.",
   "scripts": {
     "build": "jsii",
