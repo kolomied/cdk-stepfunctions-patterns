@@ -10,8 +10,5 @@ tsconfig.json
 # Exclude jsii outdir
 dist
 
-# Exclude lambda dir
-lambda
-
 # Include .jsii
 !.jsii
