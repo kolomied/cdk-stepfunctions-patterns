@@ -3,6 +3,9 @@ import * as lambda from '@aws-cdk/aws-lambda';
 import * as sfn from '@aws-cdk/aws-stepfunctions';
 import { ResilientLambdaTask } from './ResilientLambdaTask'
 
+/**
+ * Properties for defining a retry with backoff and jitter construct.
+ */
 export interface RetryWithJitterProps {
     /**
      * An optional description for this state
@@ -29,11 +32,20 @@ export interface RetryWithJitterProps {
      */
     readonly resultPath?: string;
 
+    /**
+     * Try chain to execute.
+     */
     readonly tryProcess: sfn.IChainable;
 
+    /**
+     * Retry configuration.
+     */
     readonly retryProps: sfn.RetryProps;
 } 
 
+/**
+ * Define a construct that implements retry with backoff and jitter.
+ */
 export class RetryWithJitterTask extends sfn.Parallel {
 
   constructor(scope: cdk.Construct, id: string, props: RetryWithJitterProps) {

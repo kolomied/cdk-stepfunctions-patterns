@@ -1,6 +1,9 @@
 import * as cdk from '@aws-cdk/core';
 import * as tasks from '@aws-cdk/aws-stepfunctions-tasks';
 
+/**
+ * Define a Lambda Invoke task with transient errors handling implemented.
+ */
 export class ResilientLambdaTask extends tasks.LambdaInvoke {
 
   public static readonly TransientErrors: string[] = [
@@ -15,6 +18,10 @@ export class ResilientLambdaTask extends tasks.LambdaInvoke {
     ResilientLambdaTask.addDefaultRetry(this);
   }
 
+  /**
+   * Adds retry for transient Lambda errors.
+   * @param task Lambda tast to modify.
+   */
   public static addDefaultRetry(task: tasks.LambdaInvoke): void {
     // https://docs.aws.amazon.com/step-functions/latest/dg/bp-lambda-serviceexception.html
     task.addRetry({

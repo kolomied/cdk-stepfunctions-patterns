@@ -3,10 +3,16 @@ import * as tasks from '@aws-cdk/aws-stepfunctions-tasks';
 import { RetryProps } from '@aws-cdk/aws-stepfunctions'
 import { ResilientLambdaTask } from '../construct/ResilientLambdaTask'
 
+/**
+ * Properties for defining resilience lambda checker aspect.
+ */
 export interface ResilienceLambdaCheckerProps {
     readonly fail?: boolean;
 }
 
+/**
+ * Define an aspect that validates all Lambda Invoke tasks and warns if AWS Lambda transient errors are not handled properly.
+ */
 export class ResilienceLambdaChecker implements cdk.IAspect {
 
   private readonly _fail?: boolean;

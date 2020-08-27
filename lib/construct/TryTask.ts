@@ -1,6 +1,9 @@
 import * as cdk from '@aws-cdk/core';
 import * as sfn from '@aws-cdk/aws-stepfunctions';
 
+/**
+ * Properties for defining a try/catch/finally construct.
+ */
 export interface TryProps {
     /**
      * An optional description for this state
@@ -27,17 +30,35 @@ export interface TryProps {
      */
     readonly resultPath?: string;
 
+    /**
+     * Try chain to execute.
+     */
     readonly tryProcess: sfn.IChainable;
 
+    /**
+     * Catch properties.
+     */
     readonly catchProps?: sfn.CatchProps; // provide catch-all default
 
+    /**
+     * Optional catch chain to execute.
+     */
     readonly catchProcess?: sfn.IChainable;
 
+    /**
+     * JSONPath expression to indicate where to map caught exception details.
+     */
     readonly catchErrorPath?: string;
 
+    /**
+     * Optional finally chain to execute.
+     */
     readonly finallyProcess?: sfn.IChainable;
 } 
 
+/**
+ * Define a construct that helps with handling StepFunctions exceptions.
+ */
 export class TryTask extends sfn.Parallel {
 
   constructor(scope: cdk.Construct, id: string, props: TryProps) {
