@@ -48,7 +48,7 @@ export interface TryProps {
     /**
      * JSONPath expression to indicate where to map caught exception details.
      */
-    readonly catchErrorPath?: string;
+    readonly finallyErrorPath?: string;
 
     /**
      * Optional finally chain to execute.
@@ -87,7 +87,7 @@ export class TryTask extends sfn.Parallel {
       })
         .branch(process)
         .addCatch(props.finallyProcess, {
-          resultPath: props.catchErrorPath
+          resultPath: props.finallyErrorPath
         })
         .next(props.finallyProcess);
     }
