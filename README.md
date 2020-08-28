@@ -14,6 +14,13 @@ All these patterns are *composable*, meaning that you can combine them together 
 quite complex state machines that are much easier to maintain and support than low-level
 JSON definitions.
 
+  * [Try / Catch](#try--catch-pattern)
+  * [Try / Finally](#try--finally-pattern)
+  * [Try / Catch / Finally](#try--catch--finally-pattern)
+  * [Retry with backoff and jitter](#retry-with-backoff-and-jitter)
+  * [Resilience lambda errors handling](#resilience-lambda-errors-handling)                                                                                                                                          
+  * [Validation of proper resilience lambda errors handling](#validation-of-proper-resilience-lambda-errors-handling)   
+  
 ## Try / Catch pattern
 Step Functions support **Try / Catch** pattern natively with [Task](https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-task-state.html)
 and [Parallel](https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html) states. 
