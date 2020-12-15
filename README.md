@@ -1,4 +1,4 @@
-# cdk-stepfunctions-patterns [![Mentioned in Awesome CDK](https://awesome.re/mentioned-badge.svg)](https://github.com/eladb/awesome-cdk)
+# cdk-stepfunctions-patterns [![Mentioned in Awesome CDK](https://awesome.re/mentioned-badge.svg)](https://github.com/kolomied/awesome-cdk)
 ![build](https://github.com/kolomied/cdk-stepfunctions-patterns/workflows/build/badge.svg)
 ![jsii-publish](https://github.com/kolomied/cdk-stepfunctions-patterns/workflows/jsii-publish/badge.svg)
 ![downloads](https://img.shields.io/npm/dt/cdk-stepfunctions-patterns)
